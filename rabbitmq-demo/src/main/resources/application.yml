@@ -4,10 +4,10 @@ spring:
   application:
     name: rabbitmq-demo-server
   rabbitmq:
-    host: xxx # ip地址
+    host: 192.168.2.41 # ip地址
     port: 5672
-    username: xxx # 连接账号
-    password: xxx # 连接密码
+    username: guest # 连接账号
+    password: guest # 连接密码
     template:
       retry:
         enabled: true # 开启失败重试
