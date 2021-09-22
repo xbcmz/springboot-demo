@@ -44,6 +44,7 @@
         <module>mail-demo</module>
         <module>sms-demo</module>
         <module>delay-demo</module>
+        <module>loki-demo</module>
     </modules>
 
 </project>
