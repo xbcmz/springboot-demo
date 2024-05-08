@@ -1,6 +1,5 @@
 package com.luoyu.mybatisplus.service.impl;
 
-import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.luoyu.mybatisplus.entity.Task;
 import com.luoyu.mybatisplus.mapper.TaskMapper;
@@ -12,13 +11,12 @@ import javax.annotation.Resource;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author jinhaoxun
  * @since 2020-02-13
  */
-@DS("db2")
 @Service
 public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements ITaskService {
 
@@ -26,9 +24,9 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     private TaskMapper taskMapper;
 
     /**
+     * @param name 姓名
      * @Author: jinhaoxun
      * @Description:
-     * @param name 姓名
      * @Date: 2020/2/13 下午12:06
      * @Return: com.jinhaoxun.mybatisplus.entity.Task
      * @Throws:
@@ -39,10 +37,10 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     }
 
     /**
+     * @param id   id
+     * @param name 姓名
      * @Author: jinhaoxun
      * @Description:
-     * @param id id
-     * @param name 姓名
      * @Date: 2020/2/13 下午12:06
      * @Return: int
      * @Throws:
