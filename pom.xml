@@ -45,6 +45,7 @@
         <module>sms-demo</module>
         <module>delay-demo</module>
         <module>loki-demo</module>
+        <module>rule-demo</module>
     </modules>
 
 </project>
