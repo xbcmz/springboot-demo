@@ -1,10 +1,13 @@
 package com.luoyu.easyexcel;
 
+import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.metadata.BaseRowModel;
 import com.alibaba.excel.support.ExcelTypeEnum;
 import com.luoyu.easyexcel.entity.ExcelModel;
 import com.luoyu.easyexcel.entity.ExcelModel1;
 import com.luoyu.easyexcel.entity.ExcelModel2;
+import com.luoyu.easyexcel.entity.Header;
+import com.luoyu.easyexcel.util.CustomSheetWriteHandler;
 import com.luoyu.easyexcel.util.DataConvertUtil;
 import com.luoyu.easyexcel.util.ExcelConvertCsvUtil;
 import com.luoyu.easyexcel.util.ExcelUtil;
@@ -100,12 +103,24 @@ class EasyexcelApplicationTests {
         map2.put("表三",excelModel2List);
         data.put("sheet2",map2);
 
-        File file1 = new File("E:\\3.xlsx");
+        File file1 = new File("C:\\Users\\Dell\\Desktop\\test3.xlsx");
         ByteArrayOutputStream outputStream1 = new ByteArrayOutputStream();
         byte[] bytes = ExcelUtil.writeExcel(outputStream1,sheetAndTable,data,clazz,ExcelTypeEnum.XLSX);
         FileOutputStream outputStream = new FileOutputStream(file1);
         outputStream.write(bytes);
     }
+
+
+    @Test
+    void writeExcelTest2() throws Exception {
+        File file = new File("C:\\Users\\Dell\\Desktop\\test4.xlsx");
+        EasyExcel.write(file, Header.class)
+                // 导出Excel时在此处注册handler
+                .registerWriteHandler(new CustomSheetWriteHandler())
+                .sheet(1)
+                .doWrite(new ArrayList<>());
+    }
+
 
     @Test
     void convertExcelToCsvTest() throws Exception {
